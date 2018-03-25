@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# .macos
+
+alias ls='ls -AFG'  # show hidden, indicator, color
+
+# git
+alias up='git up;compinstall'
+alias push='git up;git push'
+
+# macOS aliases
+alias update='sudo softwareupdate -i -a && brew update && brew upgrade && brew cleanup && yarn global update && sudo gem update --system && sudo gem update && sudo gem cleanup && composer self-update --snapshot && composer global update'
+
+# Default overrides for localhost
+HOST_WARNING_COLOR=''
+HOST_COLOR='\e[38;5;198m'
+
+# Get bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+   source $(brew --prefix)/etc/bash_completion
+fi
