@@ -32,7 +32,12 @@ elif [[ "$UNAMESTR" == 'Darwin' ]]; then
 fi
 
 # Common aliases
-alias ls='ls -AF --color=auto'  # show hidden, indicator, color
+if [[ ${PLATFORM} == 'linux' ]]; then
+    alias ls='ls -AF --color=auto'  # show hidden, indicator, color
+else
+    alias ls='ls -AFG'  # show hidden, indicator, color
+fi
+
 alias less="less -R"		    # colorize output
 alias dir="ls -l"               # long list
 alias ll="ls -l"                # long list

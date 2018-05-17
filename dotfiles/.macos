@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # .macos
 
-alias ls='ls -AFG'  # show hidden, indicator, color
-
 # git
 alias up='git up;compinstall'
 alias push='git up;git push'
