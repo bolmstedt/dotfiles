@@ -84,3 +84,7 @@ else
 fi
 
 PS1="$HOST_WARNING_COLOR\n\e[38;5;255m[\t] $HOST_COLOR\u@\h \e[38;5;118m\w${GITPS}\e[0m\n$ "
+
+if [ -f ~/.extras ]; then
+    source ~/.extras
+fi
