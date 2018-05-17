@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+CURRENT_DIR=$PWD;
+
 cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
@@ -19,3 +21,5 @@ else
 	fi;
 fi;
 unset doIt;
+
+cd "$CURRENT_DIR"

@@ -10,6 +10,13 @@ fi
 export PATH="$PATH:vendor/bin:$HOME/bin:$HOME/.composer/vendor/bin"
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
+export TERM='xterm-256color'
+
+# GIT PS settings
+export GIT_PS1_SHOWDIRTYSTATE=1     # unstaged (*) and staged (+) changes
+export GIT_PS1_SHOWSTASHSTATE=1     # stashed ($) changes
+export GIT_PS1_SHOWUNTRACKEDFILES=1 # untracked (%) files
+export GIT_PS1_SHOWUPSTREAM='auto'  # < behind, > ahead, <> diverged, = no diff
 
 HOST_WARNING_COLOR='\e[48;5;196m'
 HOST_COLOR='\e[38;5;232m'
@@ -26,7 +33,7 @@ fi
 
 # Common aliases
 alias ls='ls -AF --color=auto'  # show hidden, indicator, color
-alias less="less -R"		# colorize output
+alias less="less -R"		    # colorize output
 alias dir="ls -l"               # long list
 alias ll="ls -l"                # long list
 alias su="su -m"                # keep current .bashrc
