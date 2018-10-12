@@ -25,11 +25,8 @@ if [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
 fi
 
 # Configure GPP key
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+if ! [ -S ~/.gnupg/S.gpg-agent ] ; then
+   eval $(gpg-agent --daemon)
 fi
 
 GIT_AUTHOR_NAME="Marcus Bolmstedt"
