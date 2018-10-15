@@ -1,3 +1,6 @@
 set autoindent
+set smarthome
 set tabstospaces
 set tabsize 4
+
+include "~/.nano/php.nanorc"

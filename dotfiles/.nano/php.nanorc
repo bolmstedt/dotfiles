@@ -1,0 +1,43 @@
+syntax "php" "\.php|\.inc|\.module$"
+
+#Numbers
+icolor brightred "(^[0-9]+|[^a-z_0-9]*[0-9]+[^a-z_0-9]*)"
+
+color brightwhite "(<\?(php)?|\?>)"
+
+icolor brightred "(false|true|null)"
+
+icolor brightred "use [a-z_0-9\\]+"
+
+icolor magenta "new [a-z_0-9]+"
+
+color yellow "(include_once|include|require_once|require)"
+color yellow "(new|use|var|class|case|break|default|switch|if|else|elseif|@|while|return|public|private|proteted|static)"
+
+icolor magenta "[a-z_0-9]+::"
+
+color brightyellow "&\$"
+
+color brightwhite start="<\?(php)?" end="\?>"
+color magenta start="<[^\?]" end="[^\?]>"
+icolor brightblue "\$[a-z_0-9]*"
+icolor brightblue "\->[a-z_0-9]*"
+
+# functions
+icolor brightyellow "[a-z_0-9]*[[:space:]]?[(]"
+icolor brightwhite "\->[a-z_0-9]*[[:space:]]?[(]"
+
+color yellow "(!|=|::|\->|@|&&|[|]{2}|\.)"
+
+color brightyellow "\<(try|throw|catch|operator|new)\>"
+
+color brightred "\[[0-9]+\]"
+
+color brightwhite "[][,;:\?{}()\\]"
+
+color green "('[^']*')|(\"[^"]*\")"
+
+#comments
+color brightblack start="/\*" end="\*/"
+color brightblack start="#" end="$"
+color brightblack "//.*"
