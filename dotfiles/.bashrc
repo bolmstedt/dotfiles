@@ -33,20 +33,20 @@ fi
 
 # Common aliases
 if [[ ${PLATFORM} == 'linux' ]]; then
-    alias ls='ls -AF --color=auto'  # show hidden, indicator, color
+    alias ls='ls --color=auto' # color
 else
-    alias ls='ls -AFG'  # show hidden, indicator, color
+    alias ls='ls -G' # color
 fi
 
-alias less="less -R"		    # colorize output
-alias dir="ls -l"               # long list
-alias ll="ls -l"                # long list
-alias su="su -m"                # keep current .bashrc
-alias rm="rm"                   # interactive
-alias mv="mv -iv"               # interactive, verbose
-alias cp="cp -iv"               # interactive, verbose
-alias c="clear;echo;ls"         # Clear screen and list files
-alias clr="c"                   # Clear screen and list files
+alias nano="nano -lmw" # line numbers, cursor, no wrap
+alias grep="grep -iI --color=always" # ignore case, ignore binary
+alias less="less -iNR" # ignore case, line numbers, colorize output
+alias ls="ls -AF" # show hidden, indicator
+alias ll="ls -lh" # long list, human readable
+alias su="su -m" # keep current .bashrc
+alias mv="mv -iv" # interactive, verbose
+alias cp="cp -iv" # interactive, verbose
+alias clr="echo;clear;ll" # Clear screen and list files
 alias reload="exec $SHELL -l"   # Reload shell
 
 # Alias for navigating
@@ -58,10 +58,6 @@ alias cd..=".."
 alias cd...="..."
 alias cd....="...."
 alias cd.....="....."
-alias .2=".."
-alias .3="..."
-alias .4="...."
-alias .5="....."
 alias openfiles="lsof | awk '{ print $1; }' | uniq -c | sort -rn | head"
 
 # Alias functions
