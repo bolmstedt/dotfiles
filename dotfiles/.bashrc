@@ -33,15 +33,14 @@ fi
 
 # Common aliases
 if [[ ${PLATFORM} == 'linux' ]]; then
-    alias ls='ls --color=auto' # color
+    alias ls='ls -AF --color=auto' # show hidden, indicator, color
 else
-    alias ls='ls -G' # color
+    alias ls='ls -AFG' # show hidden, indicator, color
 fi
 
 alias nano="nano -lmw" # line numbers, cursor, no wrap
 alias grep="grep -iI --color=always" # ignore case, ignore binary
 alias less="less -iNR" # ignore case, line numbers, colorize output
-alias ls="ls -AF" # show hidden, indicator
 alias ll="ls -lh" # long list, human readable
 alias su="su -m" # keep current .bashrc
 alias mv="mv -iv" # interactive, verbose
